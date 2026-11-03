@@ -1,0 +1,782 @@
+/* =========================================================
+   FONT IMPORT
+   Loads DM Sans for regular text and Playfair Display for
+   headings to give the website its visual style.
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+
+/* =========================================================
+   GLOBAL STYLES
+   These rules apply across the entire website.
+   ========================================================= */
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #243d33;
+  background: #f5f2e9;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Reusable colors used throughout the website. */
+  --green: #243d33;
+  --dark-green: #192d25;
+  --cream: #f5f2e9;
+  --gold: #d6c49a;
+  --muted: #4e5c50;
+}
+
+/* Makes element sizing easier to manage by including padding
+   and borders in the declared width and height. */
+* {
+  box-sizing: border-box;
+}
+
+/* Sets up the page dimensions and smooth scrolling. */
+html {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
+
+/* Removes default browser spacing and makes the page fill
+   at least the height of the browser window. */
+body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Allows the React application to use the full browser width.
+   This also removes the default width limit sometimes added
+   by Vite's starter CSS. */
+#root {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* Makes buttons and links inherit the surrounding font. */
+button,
+a {
+  font: inherit;
+}
+
+/* Removes the default underline from links and lets them
+   inherit the surrounding text color. */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Shows a pointer when hovering over clickable buttons. */
+button {
+  cursor: pointer;
+}
+
+/* Main wrapper containing all page sections. */
+.app {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO SECTION
+   The large green introduction at the top of the page.
+   ========================================================= */
+
+.hero {
+  width: 100%;
+  min-height: 735px;
+  padding: 0 7%;
+  background: var(--green);
+  color: var(--cream);
+
+  /* Arranges the navigation, main content, and bottom labels
+     vertically inside the hero section. */
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   Contains the website name and links at the top.
+   ========================================================= */
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(245, 242, 233, 0.16);
+}
+
+/* Styles the website name in the navigation and footer. */
+.brand,
+.footer-brand {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+/* Arranges navigation links in a horizontal row. */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+/* Styles the navigation links. */
+.nav-links a {
+  color: #e0e5dc;
+  font-size: 13px;
+  transition: color 0.2s ease;
+}
+
+/* Changes the link color when a visitor hovers over it. */
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+
+/* =========================================================
+   CENTERED HERO CONTENT
+   Controls the main heading, description, and button.
+   ========================================================= */
+
+.hero-content {
+  width: 100%;
+  max-width: 950px;
+  margin: auto;
+  padding: 80px 0;
+  text-align: center;
+}
+
+/* Gives the small introductory label its gold color. */
+.hero .eyebrow {
+  color: var(--gold);
+}
+
+/* Shared style for small uppercase section labels. */
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* Main heading in the hero section. The clamp() function
+   adjusts the heading size based on the screen width. */
+.hero h1 {
+  margin: 25px 0;
+  color: var(--cream);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(48px, 6.5vw, 84px);
+  font-weight: 400;
+  line-height: 1.12;
+  text-align: center;
+}
+
+/* Controls the width, alignment, and readability of the
+   descriptive paragraph below the main heading. */
+.hero-description {
+  max-width: 550px;
+  margin: 0 auto;
+  color: #e0e5dc;
+  font-size: 16px;
+  line-height: 1.9;
+  text-align: center;
+}
+
+/* Styles the main call-to-action button. */
+.hero-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 26px;
+  padding: 17px 24px;
+  background: var(--gold);
+  color: var(--dark-green);
+  font-size: 13px;
+  font-weight: 700;
+
+  /* Smoothly animates the button's color and movement. */
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Lightens and slightly raises the button when hovered. */
+.hero-button:hover {
+  background: #e6d7b4;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BOTTOM LABELS IN THE HERO
+   Places small labels along the bottom of the green banner.
+   ========================================================= */
+
+.hero-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  /* Pushes this section toward the bottom of the flex layout. */
+  margin-top: auto;
+
+  padding: 24px 0;
+  border-top: 1px solid rgba(245, 242, 233, 0.16);
+  color: #c4d0c5;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   HALL OF FAME INTRODUCTION
+   The introductory section immediately below the hero.
+   ========================================================= */
+
+.introduction {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 100px 24px 80px;
+  background: var(--cream);
+  text-align: center;
+}
+
+/* Styles the small labels above section headings. */
+.introduction .eyebrow,
+.section-heading .eyebrow {
+  color: #526747;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+/* Shared heading styles for the introduction and class section. */
+.introduction h2,
+.section-heading h2 {
+  color: var(--green);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(42px, 5vw, 58px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Adds spacing around the introduction heading. */
+.introduction h2 {
+  margin: 20px 0;
+}
+
+/* Limits the introduction paragraph width and centers it
+   so that longer lines remain easy to read. */
+.introduction > p:last-child {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #4e5c50;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   OUR CLASSES SECTION
+   Contains the class cards and their historical contributions.
+   ========================================================= */
+
+.classes-section {
+  width: 100%;
+  padding: 75px 7% 100px;
+  background: #eeece2;
+}
+
+/* Arranges the section heading and its supporting note. */
+.section-heading {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin: 0 auto 40px;
+}
+
+/* Removes unnecessary heading spacing and adds a consistent
+   gap between the small label and the main heading. */
+.section-heading h2 {
+  margin: 14px 0 0;
+}
+
+/* Styles the small note beside the class section heading. */
+.section-note {
+  margin-bottom: 12px;
+  color: #4e5c50;
+  font-size: 14px;
+}
+
+/* Keeps the list of class cards centered and limits its width. */
+.class-list {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   CLASS CARD
+   Each card represents a class and its contributions.
+   ========================================================= */
+
+.class-card {
+  width: 100%;
+
+  /* Creates two columns: one for the decorative panel and
+     another for the class information. */
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+
+  background: #fffdf7;
+  border: 1px solid #e2dfd3;
+  box-shadow: 0 10px 30px rgba(36, 61, 51, 0.05);
+}
+
+/* Decorative panel on the left side of each class card.
+   It uses gradients instead of an actual photograph. */
+.class-photo {
+  min-height: 350px;
+  padding: 35px;
+
+  /* Combines a subtle gold glow with a dark green gradient. */
+  background:
+    radial-gradient(
+      ellipse at 80% 20%,
+      rgba(214, 196, 154, 0.2),
+      transparent 40%
+    ),
+    linear-gradient(145deg, #314d40, #192d25);
+
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Makes the class year the main visual element in the panel. */
+.photo-year {
+  color: var(--gold);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(70px, 9vw, 110px);
+  line-height: 1;
+}
+
+/* Styles the small caption near the bottom of the panel. */
+.photo-caption {
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+/* Adds spacing around the class description and expandable
+   details on the right side of the card. */
+.class-content {
+  padding: 45px;
+  align-self: center;
+}
+
+/* Styles the small year label above the class title. */
+.class-year {
+  color: #526747;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* Styles each class card's main heading. */
+.class-content h3 {
+  margin: 14px 0;
+  color: var(--green);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+/* Styles the paragraph describing the class. */
+.class-description {
+  color: #4e5c50;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   EXPANDABLE CLASS DETAILS
+   Controls the button and content that opens when clicked.
+   ========================================================= */
+
+/* Styles the button used to show or hide class details. */
+.expand-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-top: 28px;
+  padding: 16px 0;
+
+  /* Removes the browser's default button border and background. */
+  border: none;
+  border-top: 1px solid #e1dfd5;
+  background: transparent;
+
+  color: var(--green);
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Styles the plus or minus symbol inside the expand button. */
+.expand-button span {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+/* Changes the button text color when hovered. */
+.expand-button:hover {
+  color: #526747;
+}
+
+/* Creates two columns for the expanded class information.
+   The animation is defined later in this file. */
+.class-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding-top: 18px;
+  animation: appear 0.25s ease;
+}
+
+/* Styles the headings inside the expanded details. */
+.class-details h4 {
+  margin: 0 0 12px;
+  color: var(--green);
+  font-size: 13px;
+}
+
+/* Removes default list spacing and sets the list indentation. */
+.class-details ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+/* Adds spacing and readable text styles to each list item. */
+.class-details li {
+  margin-bottom: 10px;
+  color: #4e5c50;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Styles the closing note beneath the class cards. */
+.future-note {
+  max-width: 1100px;
+  margin: 35px auto 0;
+  color: #526747;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+}
+
+
+/* =========================================================
+   THANK YOU TO PROFESSOR DOOLEY
+   ========================================================= */
+
+.thank-you {
+  width: 100%;
+  padding: 90px 24px;
+  background: var(--green);
+  color: var(--cream);
+  text-align: center;
+}
+
+/* Uses gold for the small label above the thank-you heading. */
+.thank-you .eyebrow {
+  color: var(--gold);
+}
+
+/* Styles the main thank-you heading. */
+.thank-you h2 {
+  margin: 20px 0;
+  color: var(--cream);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(42px, 5vw, 58px);
+  font-weight: 400;
+}
+
+/* Adds a short decorative gold line between text elements. */
+.thank-you-divider {
+  width: 55px;
+  height: 1px;
+  margin: 28px auto;
+  background: var(--gold);
+}
+
+/* Styles the smaller heading within the thank-you section. */
+.thank-you h3 {
+  margin: 0 0 25px;
+  color: var(--cream);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+/* Styles the thank-you paragraphs, excluding the eyebrow label. */
+.thank-you > p:not(.eyebrow) {
+  max-width: 650px;
+  margin: 20px auto;
+  color: #e0e7df;
+  font-size: 14px;
+  line-height: 2;
+}
+
+/* Styles the signature at the end of the thank-you message. */
+.thank-you .thank-you-signature {
+  margin-top: 32px;
+  color: var(--gold);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 16px;
+  font-style: italic;
+}
+
+
+/* =========================================================
+   FOOTER
+   The final section at the bottom of the page.
+   ========================================================= */
+
+.footer {
+  width: 100%;
+  padding: 45px 24px;
+  background: var(--dark-green);
+  color: var(--cream);
+  text-align: center;
+}
+
+/* Allows the footer brand to sit neatly within the footer. */
+.footer-brand {
+  display: inline-block;
+}
+
+/* Styles the descriptive sentence in the footer. */
+.footer > p {
+  margin: 15px 0 25px;
+  color: #d5ded5;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+/* Styles the small final line of footer text. */
+.footer-bottom {
+  color: #c4d0c5;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   EXPANSION ANIMATION
+   Fades and slides the class details into view when opened.
+   ========================================================= */
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   TABLETS AND MOBILE
+   Adjusts the layout for screens 700px wide or smaller.
+   ========================================================= */
+
+@media (max-width: 700px) {
+  /* Reduces the height and side spacing of the hero. */
+  .hero {
+    min-height: 650px;
+    padding: 0 6%;
+  }
+
+  /* Adjusts navigation spacing for narrower screens. */
+  .navbar {
+    gap: 20px;
+    align-items: center;
+  }
+
+  /* Reduces the site name size. */
+  .brand {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  /* Reduces the spacing between navigation links. */
+  .nav-links {
+    gap: 14px;
+  }
+
+  /* Makes navigation links smaller on mobile. */
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  /* Adjusts the vertical spacing around the hero content. */
+  .hero-content {
+    padding: 75px 0;
+  }
+
+  /* Reduces the heading size for smaller screens. */
+  .hero h1 {
+    font-size: clamp(42px, 9vw, 64px);
+  }
+
+  /* Makes the hero description smaller on mobile. */
+  .hero-description {
+    font-size: 14px;
+  }
+
+  /* Reduces the size and spacing of the hero's bottom labels. */
+  .hero-bottom {
+    gap: 10px;
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  /* Reduces the spacing in the introduction section. */
+  .introduction {
+    padding: 75px 24px 60px;
+  }
+
+  /* Reduces the top and bottom spacing of the classes section. */
+  .classes-section {
+    padding: 55px 6% 70px;
+  }
+
+  /* Stacks the section heading and its note vertically. */
+  .section-heading {
+    display: block;
+  }
+
+  /* Adds spacing above the section note when stacked. */
+  .section-note {
+    margin-top: 18px;
+  }
+
+  /* Changes each class card from two columns to one column. */
+  .class-card {
+    grid-template-columns: 1fr;
+  }
+
+  /* Makes the decorative class panel shorter on mobile. */
+  .class-photo {
+    min-height: 230px;
+    padding: 25px;
+  }
+
+  /* Adjusts the year size in the decorative panel. */
+  .photo-year {
+    font-size: 75px;
+  }
+
+  /* Reduces the spacing inside the class information panel. */
+  .class-content {
+    padding: 30px 25px;
+  }
+
+  /* Reduces the class title size. */
+  .class-content h3 {
+    font-size: 28px;
+  }
+
+  /* Stacks the expanded details in a single column. */
+  .class-details {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Reduces the padding around the thank-you section. */
+  .thank-you {
+    padding: 70px 25px;
+  }
+
+  /* Reduces the padding around the footer. */
+  .footer {
+    padding: 35px 20px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   Additional adjustments for screens 420px wide or smaller.
+   ========================================================= */
+
+@media (max-width: 420px) {
+  /* Stacks the site name and navigation vertically. */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Allows navigation links to wrap onto additional lines. */
+  .nav-links {
+    flex-wrap: wrap;
+  }
+
+  /* Uses a fixed heading size for very narrow screens. */
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  /* Further reduces the bottom labels to fit small screens. */
+  .hero-bottom {
+    font-size: 7px;
+    letter-spacing: 0.8px;
+  }
+
+  /* Reduces the button spacing and padding on small phones. */
+  .hero-button {
+    gap: 12px;
+    padding: 15px 18px;
+  }
+}
