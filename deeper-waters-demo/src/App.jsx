@@ -1,6 +1,8 @@
 
 import "./App.css";
 import ClassList from "./components/ClassList";
+import SiteHeader from "./components/Header";
+import SiteFooter from "./components/Footer";
 
 // App is the main React component that builds the entire page.
 function App() {
@@ -9,19 +11,7 @@ function App() {
     <div className="app">
       {/* HERO: The top section containing the navigation and main heading. */}
       <header className="hero">
-        {/* NAVIGATION: Links to sections elsewhere on this page. */}
-        <nav className="navbar">
-          {/* Clicking the site name returns to the top of the page. */}
-          <a className="brand" href="#home">
-            DEEPER WATERS
-          </a>
-
-          {/* These links jump to the Hall of Fame and thank-you sections. */}
-          <div className="nav-links">
-            <a href="#hall-of-fame">Hall of Fame</a>
-            <a href="#gratitude">Our Gratitude</a>
-          </div>
-        </nav>
+        <SiteHeader />
 
         {/* HERO CONTENT: Main title, introduction, and navigation button. */}
         <div className="hero-content" id="home">
@@ -122,24 +112,7 @@ function App() {
           </p>
         </section>
       </main>
-
-      {/* FOOTER: Appears at the bottom of the webpage. */}
-      <footer className="footer">
-        {/* Clicking the site name returns to the top. */}
-        <a className="footer-brand" href="#home">
-          DEEPER WATERS
-        </a>
-
-        <p>
-          Preserving the stories of the Finger Lakes, one generation
-          at a time.
-        </p>
-
-        {/* Small project identification at the bottom of the page. */}
-        <span className="footer-bottom">
-          A COLLABORATIVE PROJECT • FINGER LAKES, NEW YORK
-        </span>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
