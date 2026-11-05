@@ -1,76 +1,9 @@
 
-import { useState } from "react";
 import "./App.css";
-
-// Each class is stored as an object inside this array.
-// Future classes can be added by copying the existing object
-// and changing the year, title, description, members, and projects.
-const classes = [
-  {
-    // The year identifies this class and is used as its unique key.
-    year: " Fall 2026",
-
-    // The name displayed on the class card.
-    title: "Founding Class",
-
-    // A short introduction displayed before the class details expand.
-    description:
-      "The students who began Deeper Waters and established the foundation for future classes.",
-
-    // Names of the students who belong to this class.
-    // Add or remove names here as the class list changes.
-    members: [
-      "Sarah Beiter",
-      "Kyle Benjamin",
-      "Riley Consavage",
-      "Noah Gallo",
-      "Tyler Gardner",
-      "Ashton Griffiths",
-      "Guilherme Honorato",
-      "Emily Hunstein",
-      "Zach Lindquist",
-      "Joshua Mitchell",
-      "Rain O'Donnell",
-      "Cedric Pierre-Louis",
-      "Suroor Radi",
-      "Jonathan Ragan",
-      "Orchard Rosenstein",
-      "Gabriel Thompson",
-      "Jack Tombs",
-      "Caleb Walsh",
-      "Robert Welton",
-    ],
-
-    // Stories, projects, and other contributions made by this class.
-    // Each string becomes a separate item in the Contributions list.
-    projects: [
-      "Website design and development",
-      "Research into the history around the Finger Lakes",
-      "Building a foundation for future classes",
-      "The Mysterious Mushroom House: Investigating its origins, who built it, why it was built, and the town's beliefs about the abandoned house.",
-      "Buzzo's Instrument Store: Exploring a locally famous business.",
-      "Joshua and the Empeyville Frog.",
-      "Mount Hope Cemetery: Exploring its history and stories.",
-      "Perry Ground and Haudenosaunee Folklore.",
-      "The DeLand Mansion: What Really Happened Behind Those Walls?",
-      "Zach Ennis and the Rochester Deaf Kitchen.",
-      "Glenn Curtiss: Exploring his story and legacy.",
-    ],
-  },
-];
+import ClassList from "./components/ClassList";
 
 // App is the main React component that builds the entire page.
 function App() {
-  // Tracks which class's details are currently open.
-  // null means no class is expanded.
-  const [expandedYear, setExpandedYear] = useState(null);
-
-  // Opens the selected class's details.
-  // If that class is already open, clicking it closes the details.
-  function toggleClass(year) {
-    setExpandedYear(expandedYear === year ? null : year);
-  }
-
   // Everything returned here describes what appears on the webpage.
   return (
     <div className="app">
@@ -120,8 +53,7 @@ function App() {
       </header>
 
       <main>
-        {/* INTRODUCTION: Explains the purpose of the Hall of Fame.
-            The id allows navigation links to jump to this section. */}
+        {/* INTRODUCTION: Explains the purpose of the Hall of Fame. */}
         <section className="introduction" id="hall-of-fame">
           <p className="eyebrow">A GROWING LEGACY</p>
 
@@ -149,86 +81,8 @@ function App() {
             </p>
           </div>
 
-          <div className="class-list">
-            {/* Loop through the classes array to create one card per class.
-                Adding another object to the array automatically creates
-                another card without needing to duplicate this JSX. */}
-            {classes.map((group) => (
-              // Each card uses its class year as a unique React key.
-              <article className="class-card" key={group.year}>
-                {/* CLASS PHOTO AREA:
-                    Currently displays the year and a caption.
-                    A future class can replace this with an actual photo. */}
-                <div className="class-photo">
-                  <span className="photo-year">{group.year}</span>
-                  <span className="photo-caption">
-                    THE BEGINNING OF A LEGACY
-                  </span>
-                </div>
-
-                {/* CLASS INFORMATION: Title and short description. */}
-                <div className="class-content">
-                  <p className="class-year">
-                    CLASS OF {group.year}
-                  </p>
-
-                  <h3>{group.title}</h3>
-
-                  <p className="class-description">
-                    {group.description}
-                  </p>
-
-                  {/* EXPAND BUTTON:
-                      Clicking this button shows or hides the class details.
-                      aria-expanded communicates the current state to
-                      assistive technologies. */}
-                  <button
-                    className="expand-button"
-                    onClick={() => toggleClass(group.year)}
-                    aria-expanded={expandedYear === group.year}
-                  >
-                    {expandedYear === group.year
-                      ? "Close Class Details"
-                      : "Explore Class Details"}
-                    <span>
-                      {expandedYear === group.year ? "−" : "+"}
-                    </span>
-                  </button>
-
-                  {/* Only display these details when this class is open. */}
-                  {expandedYear === group.year && (
-                    <div className="class-details">
-                      {/* CLASS MEMBERS:
-                          Generate a list automatically from the members array. */}
-                      <div>
-                        <h4>Class Members</h4>
-                        <ul>
-                          {group.members.map((member, index) => (
-                            // The name and index identify each list item.
-                            <li key={`${member}-${index}`}>
-                              {member}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* CONTRIBUTIONS:
-                          Generate a list automatically from the projects array. */}
-                      <div>
-                        <h4>Contributions</h4>
-                        <ul>
-                          {group.projects.map((project) => (
-                            // Each project description is used as its key.
-                            <li key={project}>{project}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </article>
-            ))}
-          </div>
+          {/* ClassList handles displaying all the class cards. */}
+          <ClassList />
 
           {/* Closing message beneath the class cards. */}
           <p className="future-note">
@@ -258,7 +112,7 @@ function App() {
 
           <p>
             Thank you for your guidance, encouragement, and dedication throughout our work on this project.
-            Your support has helped us develop our ideas, explore new perspectives, and contribute something meaningful to Deeper Waters. 
+            Your support has helped us develop our ideas, explore new perspectives, and contribute something meaningful to Deeper Waters.
             We appreciate the time and effort you have put into helping our class bring this project to life.
           </p>
 
