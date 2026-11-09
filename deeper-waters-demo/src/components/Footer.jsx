@@ -1,4 +1,4 @@
-import "./styles/headers-footers.css"
+import "../../styles/headers-footers.css"
 
 function SiteFooter(){
     return(

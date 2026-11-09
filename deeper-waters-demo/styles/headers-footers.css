@@ -1,0 +1,88 @@
+@import "./globals.css";
+
+:root{
+    --primary_light: #F5F2E9;
+    --primary_dark: #192D25;
+    --secondary_light: #d6c49a;
+    --secondary_dark:#055F5D;
+    --accent: #88342c;
+
+    background-color:var(--primary_light);
+}
+
+input[type="text"]{
+    border-radius:1px;
+    padding:5px;
+}
+
+.navbar {
+  background-color: var(--secondary_light);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+  border-bottom: 1px solid var(--primary_dark);
+}
+
+/* Styles the website name in the navigation and footer. */
+.brand,
+.footer-brand {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+/* Arranges navigation links in a horizontal row. */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+/* Styles the navigation links. */
+.nav-links a {
+  color: var(--secondary_dark);
+  font-size: 13px;
+  transition: color 0.2s ease;
+}
+
+/* Changes the link color when a visitor hovers over it. */
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* =========================================================
+   FOOTER
+   The final section at the bottom of the page.
+   ========================================================= */
+
+.footer {
+  width: 100%;
+  padding: 45px 24px;
+  background-color: var(--primary_light);
+  color: var(--primary_dark);
+  text-align: center;
+}
+
+/* Allows the footer brand to sit neatly within the footer. */
+.footer-brand {
+  display: inline-block;
+}
+
+/* Styles the descriptive sentence in the footer. */
+.footer > p {
+  margin: 15px 0 25px;
+  color: var(--primary_dark);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+/* Styles the small final line of footer text. */
+.footer-bottom {
+  color: var(--primary_dark);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
