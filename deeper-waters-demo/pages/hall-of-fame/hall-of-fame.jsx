@@ -1,13 +1,15 @@
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
 
+import './index.css'
+import App from './hall-of-fame.jsx'
 import "./App.css";
-import ClassList from "./components/ClassList";
-import SiteHeader from "./components/Header";
-import SiteFooter from "./components/Footer";
+import ClassList from "../../src/components/ClassList.jsx";
+import SiteHeader from "../../src/components/Header.jsx";
+import SiteFooter from "../../src/components/Footer.jsx";
 
-// App is the main React component that builds the entire page.
-function App() {
-  // Everything returned here describes what appears on the webpage.
-  return (
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
     <div className="app">
       {/* HERO: The top section containing the navigation and main heading. */}
       <header className="hero">
@@ -114,8 +116,8 @@ function App() {
       </main>
       <SiteFooter />
     </div>
-  );
-}
+  </StrictMode>,
+)
 
 // Makes App available to the rest of the React application.
 export default App;
