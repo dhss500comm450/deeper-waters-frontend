@@ -10,7 +10,8 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <div className="app">
       <header className="hero"><SiteHeader /></header>
-        <p>test</p>
+        <img src="https://picsum.photos/2000/400" className="bannerImg"></img>
+        <h1>This is a Title</h1>
       <SiteFooter />
     </div>
   </StrictMode>,

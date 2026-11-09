@@ -57,7 +57,7 @@ body {
 }
 
 #root {
-  width: 1126px;
+  width: auto;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -72,7 +72,7 @@ h1,
 h2 {
   font-family: var(--heading);
   font-weight: 500;
-  color: var(--text-h);
+  color: black;
 }
 
 h1 {
@@ -110,4 +110,8 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+.bannerImg{
+    width:100%
 }

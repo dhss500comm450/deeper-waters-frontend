@@ -6,7 +6,6 @@
     --secondary_light: #d6c49a;
     --secondary_dark:#055F5D;
     --accent: #88342c;
-
     background-color:var(--primary_light);
 }
 
@@ -17,7 +16,7 @@ input[type="text"]{
 
 .navbar {
   background-color: var(--secondary_light);
-  width: 100%;
+  max-width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -58,7 +57,7 @@ input[type="text"]{
    ========================================================= */
 
 .footer {
-  width: 100%;
+  max-width: 100%;
   padding: 45px 24px;
   background-color: var(--primary_light);
   color: var(--primary_dark);
