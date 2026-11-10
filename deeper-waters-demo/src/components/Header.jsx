@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import "./styles/headers-footers.css"
+import "../../styles/headers-footers.css"
 
 function SiteHeader(){
     // 1. Manage the search query state
