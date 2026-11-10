@@ -14,7 +14,9 @@ function App() {
       <main className="container">
         <h1 id="title">Deeper Waters</h1>
         
-        <p>ahh</p>
+        <a href="../pages/story-search/story-search">Story Search Page</a>
+        <a href="../pages/hall-of-fame/hall-of-fame">Hall of Fame Page</a>
+        <hr />
       </main>
       <SiteFooter />
     </>
