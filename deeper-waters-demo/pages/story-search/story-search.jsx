@@ -15,7 +15,7 @@ function registerStory(name, hook, breif) {
     name,
     hook,
     breif,
-    pageRef : `../${formatedName}/${formatedName}`,
+    pageRef : `../stories/${formatedName}/${formatedName}`,
     // 16:9 resolution dimensions
     image: `https://picsum.photos/seed/${id}/800/450`,
     featuredImage: `https://picsum.photos/seed/${id}/1200/675`, // bigger image for cover art
