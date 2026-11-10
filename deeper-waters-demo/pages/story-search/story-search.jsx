@@ -30,7 +30,7 @@ function getCleanedStoryName(str) {
     .replace(/\s+/g, '-');        // Replace spaces (including multiple consecutive ones) with '-'
 }
 
-// Sample stories added via registerStory
+// Add stories via registerStory
 registerStory(
   "Joshua, Emperor Frog", 
   "The Legend of the Frog", 
@@ -41,16 +41,16 @@ registerStory(
   "The first municipal victorian cemetery in the United States", 
   "Mount Hope Cemetery, founded in 1838, is the first municipal victorian cemetery in the United States, using the cemetery of Mt. Auburn in Boston as a prototype, Mount Hope was designed not as a crowded churchyard, but as a park-like landscape meant to be used by the people of Rochester as a communal space to gather. Two notable figures buried here are Susan B. Anthony who played a pivotal role in women's suffrage, and Frederick Douglass who was the most important leader of the abolitionist movement in the 19th century. The number of people who permanently reside here is more than 350,000.",
 )
-registerStory(
-  "Mount Hope Cemetery", 
-  "The first municipal victorian cemetery in the United States", 
-  "Mount Hope Cemetery, founded in 1838, is the first municipal victorian cemetery in the United States, using the cemetery of Mt. Auburn in Boston as a prototype, Mount Hope was designed not as a crowded churchyard, but as a park-like landscape meant to be used by the people of Rochester as a communal space to gather. Two notable figures buried here are Susan B. Anthony who played a pivotal role in women's suffrage, and Frederick Douglass who was the most important leader of the abolitionist movement in the 19th century. The number of people who permanently reside here is more than 350,000.",
+// sample stories
+for (let i = 0; i < 7; i++) {
+  // a placeholder thing
+  registerStory(
+  "Example Story", 
+  "This story is about This Cool Thing", 
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec tortor sit amet velit bibendum auctor. Fusce ultricies turpis sed mauris dapibus, quis blandit massa vestibulum. Fusce feugiat, mi sit amet interdum ullamcorper, quam ex volutpat justo, efficitur ornare urna elit at augue. Aliquam ornare odio efficitur metus vestibulum, vel egestas lectus tristique.",
 )
-registerStory(
-  "Joshua, Emperor Frog", 
-  "The Legend of the Frog", 
-  "Many years ago, a young lad by the name of ‘Red’ McCarthy was walking alongside the Erie Canal when he happened upon a tadpole swimming in the water. Curious, Red scooped up the tadpole, gave him the name Joshua, and carried him back to his home in Rome. Under Red’s care Joshua grew into a healthy bull frog, but one night he decided to return to the wetlands where he belonged. ",
-)
+}
+
 
 
 function App() {
@@ -95,7 +95,10 @@ function Search({ searchQuery, setSearchQuery }) {
         onChange={(e) => setSearchQuery(e.target.value)}
         className="search-input"
       />
-      <span className="search-icon">🔍</span>
+      <img 
+        src="https://picsum.photos/seed/search/25/25" 
+        alt="search icon"className="search-icon"
+      />
     </div>
   )
 }
