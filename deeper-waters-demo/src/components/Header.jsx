@@ -22,14 +22,14 @@ function SiteHeader(){
             {/* NAVIGATION: Links to sections elsewhere on this page. */}
             <nav className="navbar">
             {/* Clicking the site name returns to the top of the page. */}
-                <a className="brand" href="#home">
+                <a className="brand" href="../../index.html">
                     DEEPER WATERS
                 </a>
             {/* These links jump to the Hall of Fame and thank-you sections. */}
                 <div className="nav-links">
-                    <a href="#hall-of-fame">Map</a>
-                    <a href="#hall-of-fame">Stories</a>
-                    <a href="#hall-of-fame">Hall of Fame</a>
+                    <a href="../../index.html">Map</a>
+                    <a href="../../pages/story-search/story-search.html">Stories</a>
+                    <a href="../../pages/hall-of-fame/hall-of-fame.html">Hall of Fame</a>
                     <form onSubmit={handleSearchSubmit}>
                         <input 
                             type="text" 
