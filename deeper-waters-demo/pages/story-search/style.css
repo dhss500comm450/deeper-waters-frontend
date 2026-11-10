@@ -1,21 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
+
 :root {
   --primary-light: #F5F2E9;    /* Cream */
   --primary-dark: #192D25;     /* Dark Green */
   --secondary-light: #D6C49A;  /* Gold */
   --secondary-dark: #055F5D;   /* Teal */
   --accent: #88342C;           /* Red */
+  --info: "DM Sans", sans-serif;
+  --heading: "Playfair Display", Georgia, serif;
+  font: 18px/145% var(--info);
 }
+
 
 body {
   background-color: var(--primary-light);
   color: var(--primary-dark);
   margin: 0;
 }
+h1,
+h2 {
+  font-family: var(--heading);
+}
 
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 1.5rem 2rem;
+  padding: 0rem 2rem 1.5rem;
 }
 
 #title {

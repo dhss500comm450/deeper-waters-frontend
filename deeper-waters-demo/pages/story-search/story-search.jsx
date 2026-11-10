@@ -9,16 +9,25 @@ const storyList = []
 // Registers custom story objects into storyList using 16:9 picsum placeholder images
 function registerStory(name, hook, breif) {
   const id = storyList.length + 1 // makes it so that the images look dif
+  const formatedName = getCleanedStoryName(name);
   storyList.push({
     id: id,
     name,
     hook,
     breif,
+    pageRef : `../${formatedName}/${formatedName}`,
     // 16:9 resolution dimensions
     image: `https://picsum.photos/seed/${id}/800/450`,
     featuredImage: `https://picsum.photos/seed/${id}/1200/675`, // bigger image for cover art
     altText: `Cover image for ${name}`
   })
+}
+function getCleanedStoryName(str) {
+  return str
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, '') // Remove non-alphanumeric characters (keeps spaces)
+    .trim()                       // Remove leading and trailing spaces
+    .replace(/\s+/g, '-');        // Replace spaces (including multiple consecutive ones) with '-'
 }
 
 // Sample stories added via registerStory
@@ -95,7 +104,7 @@ function Featured({ story }) {
   return (
     <section id="featured">
       {/* <h2 className="featured-label">Featured</h2> */}
-      <a href={`#/story/${story.id}`} className="featured-card">
+      <a href={story.pageRef} className="featured-card">
         <img 
           src={story.featuredImage} 
           alt={story.altText} 
@@ -119,16 +128,16 @@ function StoryGrid({ stories }) {
     <div id="story-grid">
       {stories.map((story) => (
         <article key={story.id} className="story-card">
-          <a href={`#/story/${story.id}`} className="story-image-link">
+          <a href={story.pageRef} className="story-image-link">
             <img 
               src={story.image} 
               alt={story.altText} 
               className="story-cover-image"
             />
           </a>
-          <h3 className="story-title">
-            <a href={`#/story/${story.id}`}>{story.name}</a>
-          </h3>
+          <h2 className="story-title">
+            <a href={story.pageRef}>{story.name}</a>
+          </h2>
           <p className="story-summary">
             {story.breif}
           </p>
