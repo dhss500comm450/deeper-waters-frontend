@@ -57,14 +57,10 @@ function App() {
       <SiteHeader />
       <main className="container">
         <h1 id="title">Story Search</h1>
-        
-        <div id="top-elements">
-          {/* featured section hides when user searches */}
-          {!searchQuery.trim() && storyList.length > 0 && (
-            <Featured story={storyList[0]} />
-          )}
-
-        </div>
+        {/*hides the story search when searching */}
+        {(/* {true || !searchQuery.trim() && storyList.length > 0 && ( */
+          <Featured story={storyList[0]} />
+        )}
 
         <hr className="divider" />
 
@@ -85,7 +81,7 @@ function Search({ searchQuery, setSearchQuery }) {
     <div className="search-container">
       <input
         type="text"
-        placeholder="TYPE HERE..."
+        placeholder="Search for a story..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         className="search-input"
@@ -99,7 +95,7 @@ function Featured({ story }) {
   return (
     <section id="featured">
       {/* <h2 className="featured-label">Featured</h2> */}
-      <div id="featured-content" className="featured-card">
+      <a href={`#/story/${story.id}`} className="featured-card">
         <img 
           src={story.featuredImage} 
           alt={story.altText} 
@@ -109,7 +105,7 @@ function Featured({ story }) {
           <span className="featured-hook">{story.hook}</span>
           <h3 className="featured-title">{story.name}</h3>
         </div>
-      </div>
+      </a>
     </section>
   )
 }

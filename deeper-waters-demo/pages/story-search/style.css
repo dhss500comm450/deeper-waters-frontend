@@ -34,10 +34,9 @@ body {
   width: 100%;
   padding: 0.85rem 2.5rem 0.85rem 1.25rem;
   font-size: 1rem;
-  background-color: #ffffff;
   color: var(--primary-dark);
-  border: 2px solid var(--secondary-dark);
-  border-radius: 3px;
+  border: 0px solid var(--secondary-dark);
+  border-radius: 30px;
   box-sizing: border-box;
   outline: none;
   transition: border-color 0.2s ease;
@@ -67,12 +66,19 @@ body {
 }
 
 .featured-card {
+  display: block;
+  text-decoration: none;
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 5px;
   border: 2px solid var(--secondary-dark);
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+.featured-card:hover {
+  border-color: var(--accent);
+  opacity: 0.98;
 }
 
 .featured-cover-image {
@@ -87,16 +93,14 @@ body {
   left: 0;
   right: 0;
   padding: 1.5rem;
-  /* this is like a cool gradient too make it easier to see*/
   background: linear-gradient(transparent, var(--primary-dark));
-  color: #ffffff;
 }
 
 .featured-hook {
   font-weight: bold;
   font-size: 0.9rem;
   letter-spacing: 1px;
-  color: var(--secondary-light);
+  color: #F5F2E9;
   text-transform: uppercase;
 }
 
@@ -118,7 +122,7 @@ body {
   color: var(--primary-dark);
 }
 
-/* 2-gile Grid */
+/* 2-Tile Grid */
 #story-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -172,31 +176,33 @@ body {
   margin: 0;
 }
 
+/* Updated Navbar and Footer Styles */
+.navbar {
+  width: 100%;
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.navbar a {
+  color: var(--primary-light);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+  color: var(--secondary-light);
+}
+
 .footer {
   width: 100%;
   padding: 45px 24px;
-  background: var(--dark-green);
-  color: var(--cream);
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
   text-align: center;
-}
-.footer > p {
-  margin: 15px 0 25px;
-  color: #d5ded5;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 16px;
-  font-style: italic;
-  line-height: 1.8;
-}
-.footer-bottom {
-  color: #c4d0c5;
-  font-size: 10px;
-  letter-spacing: 2px;
-}
-.footer-brand {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 3px;
-}
-.footer-brand {
-  display: inline-block;
+  box-sizing: border-box;
 }
