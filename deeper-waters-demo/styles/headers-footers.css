@@ -42,13 +42,15 @@ input[type="text"]{
 /* Styles the navigation links. */
 .nav-links a {
   color: var(--secondary_dark);
-  font-size: 13px;
+  font-size: 20px;
   transition: color 0.2s ease;
 }
 
 /* Changes the link color when a visitor hovers over it. */
 .nav-links a:hover {
   color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* =========================================================
@@ -84,4 +86,22 @@ input[type="text"]{
   color: var(--primary_dark);
   font-size: 10px;
   letter-spacing: 2px;
+}
+
+.popup-container {
+  position: absolute;
+  display: none;
+}
+
+.popup-list {
+  /* position:relative; */
+  top: 100%;
+  left: 0;
+  color: var(--primary_dark);
+  background: #fff;
+  border: 1px solid #ccc;
+  list-style-type: disc;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
 }

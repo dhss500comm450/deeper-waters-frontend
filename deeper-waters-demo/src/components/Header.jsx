@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import "../../styles/headers-footers.css"
+import stories from "../../src/data/stories_info.js"
 
 function SiteHeader(){
+
     // 1. Manage the search query state
     const [query, setQuery] = useState('');
 
@@ -17,6 +19,32 @@ function SiteHeader(){
         alert(`Searching for: ${query}`);
     };
 
+    const possibleStories = stories.filter((story) =>
+        story.title.toLowerCase().includes(query.toLowerCase())
+    );
+
+    function displayPopoverResults(displayBool = true){
+        let popoverResults = document.querySelector(".popup-container");
+        switch (displayBool){
+            case true:
+                popoverResults.style.display = 'block';
+                break;
+            case false:
+                popoverResults.style.display = 'none';
+                break;
+        }
+    }
+
+    // Event functions that control when the search results are displayed
+    const focusSearchBar = () => displayPopoverResults(true);
+    const unfocusSearchBar = (e) => {
+        const searchForm = document.querySelector("#searchForm");
+
+        if(e.relatedTarget === null || !searchForm.contains(e.relatedTarget)){
+            displayPopoverResults(false);
+        }
+    } 
+
     return(
         <>
             {/* NAVIGATION: Links to sections elsewhere on this page. */}
@@ -30,17 +58,28 @@ function SiteHeader(){
                     <a href="../../index.html">Map</a>
                     <a href="../../pages/story-search/story-search.html">Stories</a>
                     <a href="../../pages/hall-of-fame/hall-of-fame.html">Hall of Fame</a>
-                    <form onSubmit={handleSearchSubmit}>
+                    <form onSubmit={handleSearchSubmit} id="searchForm">
                         <input 
                             type="text" 
-                            className="siteSearch" 
+                            id="siteSearch" 
                             value={query}                 // Binds the input value to React state
                             onChange={handleInputChange}   // Triggers handler on every keystroke
+                            onBlur={unfocusSearchBar}
+                            onSelect={focusSearchBar}
                             placeholder="Search Site Content" 
                             aria-label="Search site content"
                             required
                             autoComplete="on">
                         </input>
+                        <div className="popup-container">
+                            {possibleStories.map((story) => (
+                                <a key={story.guid} href={story.link}>
+                                    <div className = "popup-list">
+                                        <p>{story.title}</p>
+                                    </div>
+                                </a>
+                            ))}
+                        </div>
                     </form>
                     {/* <a href="#gratitude">Our Gratitude</a> */}
                 </div>
