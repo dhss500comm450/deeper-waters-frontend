@@ -73,24 +73,39 @@ function SiteHeader(){
                             required
                             autoComplete="on">
                         </input>
-                        <div className="popup-container">
-                            {possibleStories.map((story) => (
-                                <a key={story.guid} href={story.link}>
-                                    <div className = "popup-list">
-                                        <p className="searchPreviewTitle">{story.title}</p>
-                                        <p className="searchPreviewAttribution">By {story.author}</p>
-                                    </div>
-                                </a>
-                            ))}
-                        </div>
+                        <Popup possibleStories={possibleStories}/>
                     </form>
+                    
                     {/* <a href="#gratitude">Our Gratitude</a> */}
                 </div>
             </nav>
         </>
     )
 }
-
+// componetalized for readability
+function Popup({ possibleStories }) {
+    if (possibleStories.length === 0) {
+        return ( 
+            <div className="popup-container">
+                <div className = "popup-list">
+                    <p className="searchPreviewTitle">No stories found matching your search.</p>
+                </div>
+            </div>
+        )
+    }
+    return (
+        <div className="popup-container">
+            {possibleStories.map((story) => (
+                <a key={story.guid} href={story.link}>
+                    <div className = "popup-list">
+                        <p className="searchPreviewTitle">{story.title}</p>
+                        <p className="searchPreviewAttribution">By {story.author}</p>
+                    </div>
+                </a>
+            ))}
+        </div>
+    )
+}
 export default SiteHeader
 
 
