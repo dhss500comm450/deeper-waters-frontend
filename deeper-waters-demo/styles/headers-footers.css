@@ -53,6 +53,13 @@ input[type="text"]{
   text-underline-offset: 2px;
 }
 
+.searchPreivewTitle{
+  font-size: 18px;
+}
+.searchPreviewAttribution{
+  font-size:12px;
+}
+
 /* =========================================================
    FOOTER
    The final section at the bottom of the page.

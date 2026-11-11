@@ -19,10 +19,12 @@ function SiteHeader(){
         alert(`Searching for: ${query}`);
     };
 
+    // Filter potential user searches based on stories we have and what's currently in the search bar. 
     const possibleStories = stories.filter((story) =>
         story.title.toLowerCase().includes(query.toLowerCase())
     );
 
+    // Turns on/off the display of popover search result options
     function displayPopoverResults(displayBool = true){
         let popoverResults = document.querySelector(".popup-container");
         switch (displayBool){
@@ -64,8 +66,8 @@ function SiteHeader(){
                             id="siteSearch" 
                             value={query}                 // Binds the input value to React state
                             onChange={handleInputChange}   // Triggers handler on every keystroke
-                            onBlur={unfocusSearchBar}
-                            onSelect={focusSearchBar}
+                            onBlur={unfocusSearchBar}  //triggered when the form element is unselected
+                            onSelect={focusSearchBar}  //triggered when the form element is selected
                             placeholder="Search Site Content" 
                             aria-label="Search site content"
                             required
@@ -75,7 +77,8 @@ function SiteHeader(){
                             {possibleStories.map((story) => (
                                 <a key={story.guid} href={story.link}>
                                     <div className = "popup-list">
-                                        <p>{story.title}</p>
+                                        <p className="searchPreviewTitle">{story.title}</p>
+                                        <p className="searchPreviewAttribution">By {story.author}</p>
                                     </div>
                                 </a>
                             ))}
