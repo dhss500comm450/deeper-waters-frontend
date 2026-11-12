@@ -1,4 +1,4 @@
-<h1>NODE.JS: A COMPREHENSIVE GUIDE</h1>
+<h1>NODE.JS & VERSION CONTROL: A COMPREHENSIVE GUIDE</h1>
 
 <h2>About Node.js</h2>
 <p><strong>Node.js</strong> is a <strong>cross-platform and open-source software</strong> allowing web developers (like us!) to run the programming language JavaScript outside of the web browser. 
