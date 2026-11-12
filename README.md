@@ -1,4 +1,4 @@
-<h1>Node.js: a comprehensive guide, written by Sarah of the fall semester '26</h3>
+<h1>Node.js: a comprehensive guide</h3>
 
 <h2>About Node.js</h2>
 <p><strong>Node.js</strong> is a <strong>cross-platform and open-source software</strong> allowing web developers (like us!) to run the programming language JavaScript outside of the web browser. 
@@ -50,7 +50,7 @@
     <li><strong>git checkout [branch name]</strong> -- switch to an EXISTENT branch </li>
     <li><strong>git merge [branch name]</strong> -- take current version of main branch and merge to development branch</li>
   </ul>
-<p>Now that this is covered, let's get to the fun part! Yayyyy ⸜(｡˃ ᵕ ˂ )⸝♡</p>
+<p>Now that this is covered, let's get to the fun part! Yayyyy ◝(ᵔᗜᵔ)◜</p>
 
 <h2>Running Node.js</h2>
 <p>Yay let's actually run Node.js now! Yayyy!</p>
@@ -65,3 +65,6 @@
 <h2>Conclusion</h2>
 <p><strong>Congratulations!</strong> If things have gone right, you have successfully learned how to use Node.js to run our website on a local server! ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧
 Be proud of yourself! You have just developed a new skill that will be useful not just for this excellent project of ours that we are developing, but also in the workforce and beyond!</p>
+
+<hr />
+<p>written by Sarah of Fall '26 („• ֊ •„)</p>
