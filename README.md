@@ -64,7 +64,7 @@
 
 <h2>Conclusion</h2>
 <p><strong>Congratulations!</strong> If things have gone right, you have successfully learned how to use Node.js to run our website on a local server! ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧
-Be proud of yourself! You have just developed a new skill that will be useful not just for this excellent project of ours that we are developing, but also in the workforce and beyond!</p>
+Be proud of yourself! You have just developed a new skill that will be useful not just for this excellent project of ours that we're developing, but also in the workforce and beyond!</p>
 
 <hr />
-<p>written by Sarah of Fall '26 („• ֊ •„)</p>
+<p>written by sarah of fall '26 („• ֊ •„)</p>
