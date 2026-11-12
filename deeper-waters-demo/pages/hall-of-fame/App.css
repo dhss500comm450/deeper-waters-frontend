@@ -5,93 +5,11 @@
    ========================================================= */
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
-@import "../../styles/globals.css";
 
-/* =========================================================
-   GLOBAL STYLES
-   These rules apply across the entire website.
-   ========================================================= */
-
-:root {
-  font-family: "DM Sans", sans-serif;
-  color: #243d33;
-  background: #f5f2e9;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Reusable colors used throughout the website. */
-  --green: #243d33;
-  --dark-green: #192d25;
-  --cream: #f5f2e9;
-  --gold: #d6c49a;
-  --muted: #4e5c50;
+main{
+  max-width:none;
+  width:100%;
 }
-
-/* Makes element sizing easier to manage by including padding
-   and borders in the declared width and height. */
-* {
-  box-sizing: border-box;
-}
-
-/* Sets up the page dimensions and smooth scrolling. */
-html {
-  width: 100%;
-  min-height: 100%;
-  margin: 0;
-  scroll-behavior: smooth;
-  scroll-padding-top: 20px;
-}
-
-/* Removes default browser spacing and makes the page fill
-   at least the height of the browser window. */
-body {
-  width: 100%;
-  min-width: 320px;
-  min-height: 100vh;
-  margin: 0;
-}
-
-/* Allows the React application to use the full browser width.
-   This also removes the default width limit sometimes added
-   by Vite's starter CSS. */
-#root {
-  width: 100%;
-  max-width: none;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-}
-
-/* Makes buttons and links inherit the surrounding font. */
-button,
-a {
-  font: inherit;
-}
-
-/* Removes the default underline from links and lets them
-   inherit the surrounding text color. */
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Shows a pointer when hovering over clickable buttons. */
-button {
-  cursor: pointer;
-}
-
-/* Main wrapper containing all page sections. */
-.app {
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  overflow: hidden;
-}
-
 
 /* =========================================================
    HERO SECTION
@@ -102,57 +20,14 @@ button {
   width: 100%;
   min-height: 735px;
   padding: 0 7%;
-  background: var(--green);
-  color: var(--cream);
+  background: var(--primary-dark);
+  color: var(--primary-light);
 
   /* Arranges the navigation, main content, and bottom labels
      vertically inside the hero section. */
   display: flex;
   flex-direction: column;
 }
-
-
-/* =========================================================
-   NAVIGATION
-   Contains the website name and links at the top.
-   ========================================================= */
-
-.navbar {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 0;
-  border-bottom: 1px solid rgba(245, 242, 233, 0.16);
-}
-
-/* Styles the website name in the navigation and footer. */
-.brand,
-.footer-brand {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 3px;
-}
-
-/* Arranges navigation links in a horizontal row. */
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
-/* Styles the navigation links. */
-.nav-links a {
-  color: #e0e5dc;
-  font-size: 13px;
-  transition: color 0.2s ease;
-}
-
-/* Changes the link color when a visitor hovers over it. */
-.nav-links a:hover {
-  color: var(--gold);
-}
-
 
 /* =========================================================
    CENTERED HERO CONTENT
@@ -224,7 +99,7 @@ button {
 
 /* Lightens and slightly raises the button when hovered. */
 .hero-button:hover {
-  background: #e6d7b4;
+  background: var(--secondary-dark);
   transform: translateY(-2px);
 }
 
@@ -386,7 +261,7 @@ button {
 
 /* Makes the class year the main visual element in the panel. */
 .photo-year {
-  color: var(--gold);
+  color: var(--secondary-light);
   font-family: "Playfair Display", Georgia, serif;
   font-size: clamp(70px, 9vw, 110px);
   line-height: 1;
@@ -394,6 +269,7 @@ button {
 
 /* Styles the small caption near the bottom of the panel. */
 .photo-caption {
+  color: var(--primary-light);
   font-size: 10px;
   letter-spacing: 2px;
 }
@@ -464,7 +340,7 @@ button {
 
 /* Changes the button text color when hovered. */
 .expand-button:hover {
-  color: #526747;
+  color: var(--secondary-dark);
 }
 
 /* Creates two columns for the expanded class information.
@@ -480,7 +356,7 @@ button {
 /* Styles the headings inside the expanded details. */
 .class-details h4 {
   margin: 0 0 12px;
-  color: var(--green);
+  color: var(--primary-dark);
   font-size: 13px;
 }
 
@@ -517,8 +393,8 @@ button {
 .thank-you {
   width: 100%;
   padding: 90px 24px;
-  background: var(--green);
-  color: var(--cream);
+  background: var(--primary-dark);
+  color: var(--primary-light);
   text-align: center;
 }
 
@@ -541,7 +417,7 @@ button {
   width: 55px;
   height: 1px;
   margin: 28px auto;
-  background: var(--gold);
+  background: var(--primary-dark);
 }
 
 /* Styles the smaller heading within the thank-you section. */
@@ -565,48 +441,11 @@ button {
 /* Styles the signature at the end of the thank-you message. */
 .thank-you .thank-you-signature {
   margin-top: 32px;
-  color: var(--gold);
+  color: var(--secondary-light);
   font-family: "Playfair Display", Georgia, serif;
   font-size: 16px;
   font-style: italic;
 }
-
-
-/* =========================================================
-   FOOTER
-   The final section at the bottom of the page.
-   ========================================================= */
-
-.footer {
-  width: 100%;
-  padding: 45px 24px;
-  background: var(--dark-green);
-  color: var(--cream);
-  text-align: center;
-}
-
-/* Allows the footer brand to sit neatly within the footer. */
-.footer-brand {
-  display: inline-block;
-}
-
-/* Styles the descriptive sentence in the footer. */
-.footer > p {
-  margin: 15px 0 25px;
-  color: #d5ded5;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 16px;
-  font-style: italic;
-  line-height: 1.8;
-}
-
-/* Styles the small final line of footer text. */
-.footer-bottom {
-  color: #c4d0c5;
-  font-size: 10px;
-  letter-spacing: 2px;
-}
-
 
 /* =========================================================
    EXPANSION ANIMATION

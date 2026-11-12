@@ -3,6 +3,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import SiteFooter from '../../src/components/Footer.jsx'
 import SiteHeader from '../../src/components/Header.jsx'
+import '/styles/globals.css'
 import './style.css'
 // this is where thhe bulk of the webpage is built
 function App() {

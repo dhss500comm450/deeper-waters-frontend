@@ -1,19 +1,21 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-import '../../styles/globals.css'
 import App from './hall-of-fame.jsx'
-import "./App.css";
+
 import ClassList from "../../src/components/ClassList.jsx";
 import SiteHeader from "../../src/components/Header.jsx";
 import SiteFooter from "../../src/components/Footer.jsx";
 
+import '/styles/globals.css'
+import "./App.css";
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <div className="app">
+      <SiteHeader />
       {/* HERO: The top section containing the navigation and main heading. */}
       <header className="hero">
-        <SiteHeader />
 
         {/* HERO CONTENT: Main title, introduction, and navigation button. */}
         <div className="hero-content" id="home">

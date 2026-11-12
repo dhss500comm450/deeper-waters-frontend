@@ -2,6 +2,8 @@ import { StrictMode, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import SiteFooter from '../../src/components/Footer.jsx'
 import SiteHeader from '../../src/components/Header.jsx'
+
+import "/styles/globals.css";
 import './style.css'
 
 import storyList from "../../src/data/stories_info.js"
