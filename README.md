@@ -22,7 +22,7 @@
   at the much-necessary skill of <strong>Version Control</strong>.
 </p>
 
-<h3>Version Control 101: Git Bash Edition</h3>
+<h3>Version Control 101</h3>
 <p>Attached is a basic list of commands that are important in version control. It is a good idea to do these in order, though you will only have to clone the repository ONCE.</p>
   <u><h4>Creating Local Files</h4></u>
   <ul>
