@@ -14,7 +14,7 @@
   Once it is installed, go onto your terminal (whether it be <strong>Git Bash</strong>---which there is a section about incoming---or your Linux terminal.)
 </p>
 
-<h2>[For Windows Users] Intro to Git Bash</h2>
+<h2>[Windows] Intro to Git Bash</h2>
 <p><strong>Git Bash</strong> is a Linux-type terminal page, which allows you to conduct commands in a manner similar to how one would when utilizing an operating system on the Linux kernel.
   Git Bash is <strong>EXTREMELY NECESSARY</strong> for utilizing Node.js, hence why this is included in the guide. If you don't have it already and use Windows, I implore you to download it.
   For those unfamiliar with the Linux command syntax---don't worry! All the commands will be provided in this guide.
@@ -23,8 +23,9 @@
   <p><a href="https://gitforwindows.org">Here</a> is the link to download Git Bash. The installation process is more or less the same as it is for Node.js.</p>
 </p>
 
-<h3>Version Control 101</h3>
+<h2>Version Control 101</h2>
 <p>Attached is a basic list of commands that are important in version control. It is a good idea to do these in order, though you will only have to clone the repository ONCE.</p>
+<p>On Git Bash, you should automatically have these commands; otherwise, if on Linux, you may need to install packages first.</p>
   <u><h4>Creating Local Files</h4></u>
   <ul>
     <li><strong>mkdir [directory-name]</strong> -- create a new local directory</li>
