@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import "../../styles/headers-footers.css"
-import stories from "../../src/data/stories_info.js"
+import storyList from "../../src/data/stories_info.js"
 
 function SiteHeader(){
 
@@ -20,7 +20,7 @@ function SiteHeader(){
     };
 
     // Filter potential user searches based on stories we have and what's currently in the search bar. 
-    const possibleStories = stories.filter((story) =>
+    const possibleStories = storyList.filter((story) =>
         story.title.toLowerCase().includes(query.toLowerCase())
     );
 
@@ -96,7 +96,7 @@ function Popup({ possibleStories }) {
     return (
         <div className="popup-container">
             {possibleStories.map((story) => (
-                <a key={story.guid} href={story.link}>
+                <a key={story.id} href={story.pageRef}>
                     <div className = "popup-list">
                         <p className="searchPreviewTitle">{story.title}</p>
                         <p className="searchPreviewAttribution">By {story.author}</p>
