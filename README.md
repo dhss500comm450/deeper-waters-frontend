@@ -22,20 +22,20 @@
   at the much-necessary skill of <strong>Version Control</strong>.
 </p>
 
-<h4>Version Control 101: Git Bash Edition</h4>
+<h3>Version Control 101: Git Bash Edition</h3>
 <p>Attached is a basic list of commands that are important in version control. It is a good idea to do these in order, though you will only have to clone the repository ONCE.</p>
-  <h4>Creating Local Files</h4>
+  <u><h4>Creating Local Files</h4></u>
   <ul>
     <li><strong>mkdir [directory-name]</strong> -- create a new local directory</li>
     <li><strong>git init</strong> -- initiate a repository</li>
   </ul>
-  <h4>Prepare Repository</h4>
+  <u><h4>Prepare Repository</h4></u>
   <ul>
     <li><strong>git clone [https link]</strong> -- clone a repository locally</li>
     <li><strong>cd [repo-name]</strong> -- move into repository's directory</li>
     <li><strong>git pull</strong> -- update local repository with whatever has been added to the GitHub cloud. <strong>Make sure to pull to avoid conflicts, especially if many people work on the repository at once!</strong></li>
   </ul>
-  <h4>Commit Workflow</h4>
+  <u><h4>The Git Commit Flow: RUN IN ORDER</h4></u>
   <ul>
     <li><strong>git add * </strong> -- add ALL of your saved work to the repo</li>
     <li><strong>git add [specific-file.extension]</strong> -- add ONE SPECIFIC FILE to the repo</li>
@@ -43,7 +43,7 @@
       Note here that adding a message is REQUIRED, and you should practice committing thorough messages to keep everyone up-to-date with eachother's workflow!</li>
     <li><strong>git push</strong> -- pushes added local work up to the GitHub cloud, so we can all look at and use your work! :D</li>
   </ul>
-  <h4>Branching & Switching</h4>
+  <u><h4>Branching & Switching</h4></u>
   <ul>
     <li><strong>git checkout -b [branch name]</strong> -- create a new branch and switch to it</li>
     <li><strong>git branch [branch name]</strong> -- create new branch</li>
