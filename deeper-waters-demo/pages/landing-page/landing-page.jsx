@@ -14,6 +14,7 @@ function App() {
       <SiteHeader />
       <main className="container">
         <h1 id="title">Deeper Waters</h1>
+        
         <hr />
       </main>
       <SiteFooter />
