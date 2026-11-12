@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-import '../../../styles/globals.css'
+import '/styles/globals.css'
 
 import SiteHeader from "../../../src/components/Header.jsx";
 import SiteFooter from "../../../src/components/Footer.jsx";
@@ -9,9 +9,13 @@ import SiteFooter from "../../../src/components/Footer.jsx";
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <div className="app">
-      <header className="hero"><SiteHeader /></header>
+      <header className="hero">
+        <SiteHeader />
         <img src="https://picsum.photos/2000/400" className="bannerImg"></img>
+      </header>
+      <main>
         <h1>This is a Title</h1>
+      </main>
       <SiteFooter />
     </div>
   </StrictMode>,

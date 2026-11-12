@@ -1,23 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 /* global styles go here */
 
+/* Makes element sizing easier to manage by including padding
+   and borders in the declared width and height. */
+* {
+  box-sizing: border-box;
+}
+
+/* Makes buttons and links inherit the surrounding font. */
+button, a {
+  font: inherit;
+}
+
+/* Removes the default underline from links and lets them
+   inherit the surrounding text color. */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+
+}
+
+/* Shows a pointer when hovering over clickable buttons. */
+button {
+  cursor: pointer;
+}
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --primary-light: #F5F2E9;    /* Cream */
+  --primary-dark: #192D25;     /* Dark Green */
+  --secondary-light: #D6C49A;  /* Gold */
+  --secondary-dark: #055F5D;   /* Teal */
+  --accent: #88342C;           /* Red */
+  
+  --text: var(--primary-dark);
+  --text-h: var(--secondary-dark);
+  --bg: var(--primary-light);
+  --border: var(--primary-dark);
+  --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  --body-font: "Segoe UI", sans-serif;
+  --header-font: "Playfair Display", serif;
 
-  font: 18px/145% var(--sans);
+  font: 18px/145% var(--body-font);
   letter-spacing: 0.18px;
   color-scheme: light dark;
   color: var(--text);
@@ -30,47 +57,61 @@
   @media (max-width: 1024px) {
     font-size: 16px;
   }
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
-body {
-  margin: 0;
-}
-
-#root {
-  width: auto;
   max-width: 100%;
+  min-height: 100svh;  
   margin: 0 auto;
   text-align: left;
   border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
 }
+
+/* Allows the React application to use the full browser width.
+   This also removes the default width limit sometimes added
+   by Vite's starter CSS. */
+#root {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --text: var(--primary-light);
+    --text-h: #f3f4f6;
+    --bg: var(--primary-dark);
+    --border: var(--primary-light);
+    --shadow:rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+} */
+
+html {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
+
+/* Removes default browser spacing and makes the page fill
+   at least the height of the browser window. */
+body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main{
+  max-width: 1000px;
+  margin:0 auto;
+} 
 
 h1,
 h2 {
-  font-family: var(--heading);
+  font-family: var(--header-font);
   font-weight: 500;
   color: black;
 }
@@ -95,21 +136,6 @@ h2 {
 }
 p {
   margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
 }
 
 .bannerImg{
