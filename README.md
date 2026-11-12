@@ -20,6 +20,7 @@
   For those unfamiliar with the Linux command syntax---don't worry! All the commands will be provided in this guide.
   Git Bash is also useful when one has to clone and commit repositories on GitHub without being on the specific app GitHub Desktop. Knowing ~15 commands maximum allows you to become at least intermediate
   at the much-necessary skill of <strong>Version Control</strong>.
+  <p><a href="https://gitforwindows.org">Here</a> is the link to download Git Bash. The installation process is more or less the same as it is for Node.js.</p>
 </p>
 
 <h3>Version Control 101</h3>
