@@ -57,7 +57,7 @@
 <p>Yay let's actually run Node.js now! Yayyy!</p>
 <ol>
   <li>Start by running your Linux-style command prompt of choice.</li>
-  <li>Run: <strong>npm -v</strong>: it may run for a moment but should eventually give you a version: as of 11/12/2026, it is 11.19.1; do not fret if it is a different version because Node.js updates.</li>
+  <li>Run <strong>node -v</strong> and <strong>npm -v</strong>: it may run for a moment but should eventually give you a version: as of 11/12/2026, it is respectively v26.13.1 and 11.20.1; do not fret if you have slightly different versions because Node.js tends to update a lot!</li>
   <li>Then, use <strong>npm i</strong>. This will install various packages. You MAY receive a message that there are security vulnerabilities; if you care about that, run <strong>npm audit fix --force</strong></li>
   <li>In our main branch, run <strong>npm run dev</strong>: if you are running this properly, you should receive a local server link. On the IDE Visual Studio Code, hover over the 
     link and do Ctrl (or Cmd) + Click to see our website's beauty in action</li>
