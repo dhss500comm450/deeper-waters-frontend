@@ -1,5 +1,4 @@
-<h1>Node.js</h1>
-<h3>-- a comprehensive guide, written by Sarah of the fall semester '26</h3>
+<h1>Node.js: a comprehensive guide, written by Sarah of the fall semester '26</h3>
 
 <h2>About Node.js</h2>
 <p><strong>Node.js</strong> is a <strong>cross-platform and open-source software</strong> allowing web developers (like us!) to run the programming language JavaScript outside of the web browser. 
