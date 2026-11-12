@@ -1,35 +1,31 @@
 @import "./globals.css";
 
-:root{
-    --primary_light: #F5F2E9;
-    --primary_dark: #192D25;
-    --secondary_light: #d6c49a;
-    --secondary_dark:#055F5D;
-    --accent: #88342c;
-    background-color:var(--primary_light);
-}
-
 input[type="text"]{
-    border-radius:1px;
+    border-radius:3px;
     padding:5px;
 }
 
 .navbar {
-  background-color: var(--secondary_light);
-  max-width: 100%;
+  width:100%;
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
+  padding: 1.25rem 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 20px;
-  border-bottom: 1px solid var(--primary_dark);
+  box-sizing: border-box;
 }
 
 /* Styles the website name in the navigation and footer. */
-.brand,
-.footer-brand {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 3px;
+.brand, .footer-brand {
+  color: var(--primary-light);
+  font-size:25px;
+  font-weight:bold;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.brand:hover, .footer-brand:hover {
+  color: var(--secondary-light);
 }
 
 /* Arranges navigation links in a horizontal row. */
@@ -41,14 +37,14 @@ input[type="text"]{
 
 /* Styles the navigation links. */
 .nav-links a {
-  color: var(--secondary_dark);
+  color: var(--primary-light);
   font-size: 20px;
   transition: color 0.2s ease;
 }
 
 /* Changes the link color when a visitor hovers over it. */
 .nav-links a:hover {
-  color: var(--accent);
+  color: var(--secondary-light);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -68,9 +64,10 @@ input[type="text"]{
 .footer {
   max-width: 100%;
   padding: 45px 24px;
-  background-color: var(--primary_light);
-  color: var(--primary_dark);
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
   text-align: center;
+  box-sizing: border-box;
 }
 
 /* Allows the footer brand to sit neatly within the footer. */
@@ -81,7 +78,6 @@ input[type="text"]{
 /* Styles the descriptive sentence in the footer. */
 .footer > p {
   margin: 15px 0 25px;
-  color: var(--primary_dark);
   font-family: "Playfair Display", Georgia, serif;
   font-size: 16px;
   font-style: italic;
@@ -90,7 +86,6 @@ input[type="text"]{
 
 /* Styles the small final line of footer text. */
 .footer-bottom {
-  color: var(--primary_dark);
   font-size: 10px;
   letter-spacing: 2px;
 }
@@ -104,7 +99,7 @@ input[type="text"]{
   /* position:relative; */
   top: 100%;
   left: 0;
-  color: var(--primary_dark);
+  color: var(--primary-dark);
   background: #fff;
   border: 1px solid #ccc;
   list-style-type: disc;
