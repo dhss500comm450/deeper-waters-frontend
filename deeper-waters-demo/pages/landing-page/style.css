@@ -1,2 +1,12 @@
 @import "/styles/globals.css";
 
+
+/* test map css */
+.arcgis-map arcgis-embedded-map {
+  display: block;
+  width: 100%;
+  height: 600px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+
