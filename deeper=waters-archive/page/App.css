@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+
+/* =========================================================
+   GLOBAL STYLES
+   These rules apply across the entire website.
+   ========================================================= */
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #243d33;
+  background: #f5f2e9;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Reusable colors used throughout the website. */
+  --green: #243d33;
+  --dark-green: #192d25;
+  --cream: #f5f2e9;
+  --gold: #d6c49a;
+  --muted: #4e5c50;
+}
+
+/* Makes element sizing easier to manage by including padding
+   and borders in the declared width and height. */
+* {
+  box-sizing: border-box;
+}
+
+/* Sets up the page dimensions and smooth scrolling. */
+html {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
+
+/* Removes default browser spacing and makes the page fill
+   at least the height of the browser window. */
+body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Allows the React application to use the full browser width.
+   This also removes the default width limit sometimes added
+   by Vite's starter CSS. */
+#root {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* Makes buttons and links inherit the surrounding font. */
+button,
+a {
+  font: inherit;
+}
+
+/* Removes the default underline from links and lets them
+   inherit the surrounding text color. */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Shows a pointer when hovering over clickable buttons. */
+button {
+  cursor: pointer;
+}
+
+/* Main wrapper containing all page sections. */
+.app {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
