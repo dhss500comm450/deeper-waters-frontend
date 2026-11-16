@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import "/styles/globals.css"
 import "../../styles/headers-footers.css"
 import storyList from "../../src/data/stories_info.js"
 
