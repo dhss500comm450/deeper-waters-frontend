@@ -1,0 +1,30 @@
+main{
+    max-width:none;
+    width:100%;
+}
+
+#titleBarDiv{
+    display: flex;
+    justify-content:space-between;
+    flex-direction: row;
+    align-items:center;
+}
+
+#archiveButton{
+    max-height: fit-content;
+}
+
+.backgroundImage{
+  /* 1. Set the image */
+  background-image: url("https://picsum.photos/2000/1000");
+
+  /* 2. Lock the image in place so it does not scroll */
+  background-attachment: fixed;
+
+  /* 3. Center the image and prevent tiling */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* 4. Scale the image to cover the entire screen */
+  background-size: cover;
+}
