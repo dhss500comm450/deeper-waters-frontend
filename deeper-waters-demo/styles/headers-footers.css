@@ -93,6 +93,7 @@ input[type="text"]{
 .popup-container {
   position: absolute;
   display: none;
+  z-index: 2;
 }
 
 .popup-list {
