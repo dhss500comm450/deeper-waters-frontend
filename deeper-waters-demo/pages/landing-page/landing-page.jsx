@@ -12,16 +12,16 @@ function App() {
     // here you could run react functions like useState() and other js features
     // inside the return is the html code which the page uses and is sent to clients
     return (
-    <>
+    <div className="home-page">
       <SiteHeader />
-        <main id="main-content">
+        <main className="home-main" id="main-content">
           <section className="arcgis-map" id="explore" aria-labelledby="map-heading">
-            <arcgis-embedded-map item-id="44193eae185048d5977fb42af74150c8" theme="light" time-zone-label-enabled center="-76.90117079757196,42.75457097351648" scale="1155581.108577" portal-url="https://ritarcgis.maps.arcgis.com"></arcgis-embedded-map>
           <div className="home-map-title">
             <p className="home-label">EXPLORE THE REGION</p>
             <h1 id="map-heading">Deeper<br />Waters</h1>
             <p>LOREM IPSUM DOLOR SIT AMET.</p>
           </div>
+            <arcgis-embedded-map item-id="44193eae185048d5977fb42af74150c8" theme="light" time-zone-label-enabled center="-76.90117079757196,42.75457097351648" scale="1155581.108577" portal-url="https://ritarcgis.maps.arcgis.com"></arcgis-embedded-map>
           <article className="home-map-card">
             <div className="home-map-card-label"><span aria-hidden="true">01</span><p className="home-label">LOREM IPSUM<br /><span>Finger Lakes, New York</span></p></div>
             <div className="home-map-card-footer"><span>DOLOR SIT AMET</span></div>
@@ -50,7 +50,7 @@ function App() {
           </section>
         </main>
       <SiteFooter />
-    </>
+    </div>
   )
 }
 export default App
