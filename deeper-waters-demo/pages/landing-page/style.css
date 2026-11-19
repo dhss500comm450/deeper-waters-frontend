@@ -1,2 +1,283 @@
-@import "/styles/globals.css";
+.home-page {
+  background: var(--bg);
+}
+
+.home-main {
+  max-width: none;
+}
+
+.home-main a:focus-visible {
+  outline: 3px solid var(--secondary-dark);
+  outline-offset: 5px;
+}
+
+.home-main .arcgis-map {
+  position: relative;
+  isolation: isolate;
+  --map-control-space: 80px;
+}
+
+.arcgis-map arcgis-embedded-map {
+  display: block;
+  width: 100%;
+  height: clamp(620px, 75svh, 850px);
+}
+
+.home-map-title {
+  position: absolute;
+  z-index: 1;
+  top: var(--map-control-space);
+  left: var(--map-control-space);
+  width: min(310px, calc(100% - 2 * var(--map-control-space)));
+  margin: 0;
+  padding: 24px 28px;
+  background: var(--bg);
+  border-left: 4px solid var(--accent);
+  pointer-events: none;
+}
+
+.home-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.14em;
+}
+
+.home-map-title h1 {
+  line-height: 1.1;
+}
+
+.home-map-title > p:last-child {
+  color: var(--text);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+}
+
+.home-map-card {
+  position: absolute;
+  z-index: 1;
+  right: var(--map-control-space);
+  bottom: var(--map-control-space);
+  width: min(310px, calc(100% - 2 * var(--map-control-space)));
+  margin: 0;
+  padding: 22px;
+  background: var(--bg);
+  border-top: 4px solid var(--accent);
+  box-shadow: var(--shadow);
+  pointer-events: none;
+}
+
+.home-map-card-label {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.home-map-card-label > span {
+  color: var(--accent);
+  font-family: var(--header-font);
+  font-size: 2rem;
+}
+
+.home-map-card-label .home-label span {
+  color: var(--text);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.home-map-card-footer {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid var(--secondary-light);
+  color: var(--text);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+}
+
+/* project and class overview */
+.home-overview,
+.home-contact {
+  width: min(920px, calc(100% - 80px));
+  margin-inline: auto;
+}
+
+.home-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: clamp(40px, 7vw, 100px);
+  padding-block: 80px;
+}
+
+.home-overview > section {
+  min-width: 0;
+}
+
+.home-overview .home-label + h2 {
+  margin-top: 12px;
+}
+
+.home-overview #about > p:not(.home-label) {
+  max-width: 55ch;
+  color: var(--text);
+}
+
+.home-text-link {
+  display: inline-block;
+  margin-top: 28px;
+  padding-bottom: 4px;
+  color: var(--text-h);
+  font-weight: 600;
+  border-bottom: 1px solid currentColor;
+}
+
+.home-hall-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 26px;
+  min-height: 280px;
+  padding: 32px;
+  background: var(--secondary-light);
+  color: var(--primary-dark);
+}
+
+.home-hall-card:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.home-hall-card .home-label {
+  color: var(--primary-dark);
+}
+
+.home-hall-title {
+  font-family: var(--header-font);
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.home-hall-bottom {
+  margin-top: auto;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+/* contact panel */
+.home-contact {
+  padding-block: 44px 80px;
+  border-top: 1px solid var(--secondary-light);
+}
+
+.home-contact-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  padding: 32px;
+  background: var(--secondary-light);
+}
+
+.home-contact-panel p {
+  font-size: 1.15rem;
+}
+
+.home-contact-panel > span {
+  align-self: center;
+  color: var(--text);
+}
+
+/* keep the shared navigation within the homepage width */
+@media (max-width: 1100px) {
+  .home-page .navbar {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 24px;
+  }
+
+  .home-page .nav-links {
+    flex-wrap: wrap;
+    gap: 16px 24px;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-page .navbar {
+    padding: 20px;
+  }
+
+  .home-page .brand {
+    font-size: 22px;
+  }
+
+  .home-page .nav-links {
+    width: 100%;
+    gap: 12px 20px;
+  }
+
+  .home-page .nav-links a {
+    font-size: 16px;
+  }
+
+  .home-page #searchForm,
+  .home-page #siteSearch {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .home-page #searchForm {
+    position: relative;
+  }
+
+  .home-page .popup-container {
+    width: 100%;
+    z-index: 2;
+  }
+
+  .arcgis-map arcgis-embedded-map {
+    height: 660px;
+  }
+
+  .home-main .arcgis-map {
+    --map-control-space: 64px;
+  }
+
+  .home-map-title {
+    padding: 16px;
+  }
+
+  .home-map-card {
+    padding: 16px;
+  }
+
+  .home-map-card-label {
+    gap: 12px;
+  }
+
+  .home-overview,
+  .home-contact {
+    width: calc(100% - 40px);
+  }
+
+  .home-overview {
+    grid-template-columns: 1fr;
+    gap: 44px;
+    padding-block: 44px;
+  }
+
+  .home-hall-card {
+    padding: 24px;
+  }
+
+  .home-contact {
+    padding-block: 32px 44px;
+  }
+
+  .home-contact-panel {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 24px;
+  }
+}
 

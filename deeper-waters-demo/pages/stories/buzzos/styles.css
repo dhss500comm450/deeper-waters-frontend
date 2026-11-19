@@ -1,0 +1,53 @@
+main{
+    max-width:none;
+    width:100%;
+    margin:0;
+}
+
+.centered{
+    max-width:80vw;
+    margin:0 auto;
+}
+
+#titleBarDiv{
+    display: flex;
+    justify-content:space-between;
+    flex-direction: row;
+    align-items:center;
+}
+
+#archiveButton{
+    max-height: fit-content;
+}
+
+
+
+.backgroundImage{
+  /* 1. Set the image */
+  background-image: url("https://picsum.photos/3000/2000");
+
+  /* 2. Lock the image in place so it does not scroll */
+  background-attachment: fixed;
+
+  /* 3. Center the image and prevent tiling */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* 4. Scale the image to cover the entire screen */
+  background-size:cover;
+
+  height: 100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  width:100%;
+}
+
+.inImageText{
+
+    width:50%;
+    margin: 25px 50px;
+    padding: 25px;
+    background-color: var(--primary-dark);
+    color: var(--primary-light)
+}

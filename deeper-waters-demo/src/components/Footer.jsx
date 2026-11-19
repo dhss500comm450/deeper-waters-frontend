@@ -1,3 +1,4 @@
+import "/styles/globals.css"
 import "../../styles/headers-footers.css"
 
 function SiteFooter(){
@@ -6,7 +7,7 @@ function SiteFooter(){
             {/* FOOTER: Appears at the bottom of the webpage. */}
             <footer className="footer">
                 {/* Clicking the site name returns to the top. */}
-                <a className="footer-brand" href="#home">
+                <a className="footer-brand" href="/pages/landing-page/landing-page.html">
                     DEEPER WATERS
                 </a>
 
