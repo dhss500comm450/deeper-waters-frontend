@@ -18,8 +18,8 @@ function App() {
           <section className="arcgis-map" id="explore" aria-labelledby="map-heading">
           <div className="home-map-title">
             <p className="home-label">EXPLORE THE REGION</p>
-            <h1 id="map-heading">Deeper<br />Waters</h1>
-            <p>LOREM IPSUM DOLOR SIT AMET.</p>
+            <h1 id="map-heading">Feild<br />Notes</h1>
+            <p>STORIES FROM THE FINGER LAKES</p>
           </div>
             <arcgis-embedded-map item-id="44193eae185048d5977fb42af74150c8" theme="light" time-zone-label-enabled center="-76.90117079757196,42.75457097351648" scale="1155581.108577" portal-url="https://ritarcgis.maps.arcgis.com"></arcgis-embedded-map>
           <article className="home-map-card">
@@ -31,21 +31,20 @@ function App() {
             <section id="about" aria-labelledby="about-heading">
               <p className="home-label">THE PROJECT</p>
               <h2 id="about-heading">About Us</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p>Feild Notes is a student-run collaborative project at the Rochester Institute of Technology dedicated to showcasing stories related to the Finger Lakes and the area around them. The project uses a variety of mediums such as websites, sound, and videos to create a unique, immersive experience.</p>
               <a className="home-text-link" href={storiesUrl}>Find a story</a>
             </section>
             <section aria-labelledby="hall-heading">
               <h2 id="hall-heading"><a href={hallUrl}>Hall of Fame</a></h2>
               <a className="home-hall-card" href={hallUrl}>
-                <span className="home-label">LOREM IPSUM DOLOR SIT AMET</span>
-                <span className="home-hall-title">Lorem ipsum.<br />Dolor sit amet.</span>
-                <span className="home-hall-bottom">Meet the classes</span>
+                <span className="home-label">To honor the classes and the hardwork put into this project by all the previous and current classes.</span>
+                <span className="home-hall-title">SEE THE CREATORS<br />OF THIS PROJECT</span>
               </a>
             </section>
           </div>
           <section className="home-contact" id="contact" aria-labelledby="contact-heading">
             <h2 id="contact-heading">Get in touch</h2>
-            <div className="home-contact-panel"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><span>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+            <div className="home-contact-panel"><p>If you have any questions, comments, or concerns, please do not hesitate to contact us at XXX</p>
           </div>
           </section>
         </main>
