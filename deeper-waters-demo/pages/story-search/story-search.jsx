@@ -48,12 +48,14 @@ function Search({ searchQuery, setSearchQuery }) {
         placeholder="Search for a story..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        className="search-input"
+        id="search-input"
       />
       <img 
         src="https://picsum.photos/seed/search/25/25" 
-        alt="search icon"className="search-icon"
+        alt="search icon"
+        className="search-icon"
       />
+      <button>x</button>
     </div>
   )
 }
