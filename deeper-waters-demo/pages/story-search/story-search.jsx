@@ -55,7 +55,7 @@ function Search({ searchQuery, setSearchQuery }) {
         alt="search icon"
         className="search-icon"
       />
-      <button>x</button>
+      <button class="search-filter">x</button>
     </div>
   )
 }
