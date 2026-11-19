@@ -51,15 +51,14 @@
   right: 0.8rem;
   aspect-ratio: 1;
   width: 3%;
-  border: 1px solid var(--secondary-dark);
+  border: 1px solid var(--secondary-light);
   background-color: #ffffff;
-  color: var(--secondary-dark);
-  border-radius: 2px;
+  color: var(--secondary-light);
+  border-radius: 5px;
 }
 .search-filter:hover {
   border-color: var(--accent);
   color: var(--accent);
-  
 }
 .search-filter:active {
   background-color: #b9b8b4;

@@ -10,6 +10,7 @@ import storyList from "../../src/data/stories_info.js"
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('')
+  const [filterMenueOpen, toggleFilterMenue] = useState(false)
 
   const filteredStoryList = storyList.filter((story) =>
     story.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -30,7 +31,7 @@ function App() {
 
         <div className="stories-header">
           <h2>Stories</h2>
-          <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+          <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} filterMenueOpen={filterMenueOpen} toggleFilterMenue={toggleFilterMenue} />
         </div>
 
         <StoryGrid stories={filteredStoryList} />
@@ -40,7 +41,7 @@ function App() {
   )
 }
 
-function Search({ searchQuery, setSearchQuery }) {
+function Search({ searchQuery, setSearchQuery, filterMenueOpen, toggleFilterMenue}) {
   return (
     <div className="search-container">
       <input
@@ -55,7 +56,16 @@ function Search({ searchQuery, setSearchQuery }) {
         alt="search icon"
         className="search-icon"
       />
-      <button class="search-filter">x</button>
+      <button 
+        class="search-filter"
+        onClick={() => toggleFilterMenue(!filterMenueOpen)}
+      >
+        {(filterMenueOpen && ( // if-else statement using short circuting
+          <p class="filter-active">O</p>
+        )) || (
+          <p class="filter-inactive">F</p>
+        )}
+      </button>
     </div>
   )
 }
